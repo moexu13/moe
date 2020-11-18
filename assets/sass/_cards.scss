@@ -1,0 +1,33 @@
+.cards {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+
+  &__card {
+    box-shadow: 0 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.1),
+    0 0.6rem 2rem 0 rgba(0, 0, 0, 0.09);
+    height: 24rem;
+    position: relative;
+    text-align: center;
+    width: 18rem;
+
+    &:not(:first-child) {
+      margin-left: 3.4rem;
+    }
+
+    &--image  img {
+      height: 20rem;
+      object-fit: contain;
+      width: 18rem;
+    }
+
+    &--title {
+      background-image: linear-gradient(to bottom, $color-white, $color-gray-light);
+      color: $text-color-dark;
+      height: 3rem;
+      margin: 1rem 0;
+      padding-top: .6rem;
+    }
+  }
+}

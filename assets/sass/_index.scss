@@ -1,0 +1,38 @@
+.header {
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary);
+  color: transparent;
+  font-family: timberline;
+  font-size: 2rem;
+  font-weight: bold;
+  height: 4rem;
+  line-height: 4rem;
+  padding-left: 2rem;
+  letter-spacing: 2px;
+
+  & img {
+    height: 3.6rem;
+    width: 3.6rem;
+  }
+}
+
+.hero__image {
+  height: 40rem;
+  object-fit: cover;
+  opacity: 0.95;
+  width: 100%;
+}
+
+.section__heading {
+  text-align: center;
+}
+
+.section__text {
+  margin: 2rem 5rem;
+}
+
+.work {
+  margin-top: 3rem;
+}
+

@@ -1,0 +1,53 @@
+#nav__links {
+  display: none;
+}
+
+.nav {
+  background-color: $color-white;
+  color: $text-color-dark;
+  position: relative;
+  top: 0;
+  width: 100%;
+
+  &__icon {
+    color: $color-white;
+    font-size: 2rem;
+    position: fixed;
+    right: 3rem;
+    top: 1.6rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__links {
+    background-image: radial-gradient($color-primary-dark, $color-tertiary);
+    border-radius: 2px;
+    height: 15rem;
+    overflow: hidden;
+    position: absolute;
+    right: 3rem;
+    top: 2rem;
+    width: 12rem;
+  }
+
+  & a {
+    color: $text-color-light;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+
+  & ul {
+    list-style: none;
+
+    & li {
+      font-size: 1.2rem;
+      line-height: 2rem;
+      // margin-left: 2.6rem;
+    }
+  }
+}
