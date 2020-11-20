@@ -18,6 +18,7 @@
     <TechBar />
     <Cards />
     <h2 class="section__heading">Latest Posts</h2>
+    <ContactForm />
     <Footer />
   </div>
 </template>

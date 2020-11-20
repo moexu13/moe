@@ -1,0 +1,55 @@
+.btn {
+  border: none;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  height: 4rem;
+  margin: 0 auto;
+  width: 15rem;
+}
+
+.btn-submit {
+  background-image: linear-gradient(to right bottom, $color-primary, $text-color-dark);
+  color: $text-color-light;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+  transition: all 0.2s;
+
+  &:hover {
+    background-image: linear-gradient(to right bottom, $color-secondary, $color-secondary-dark);
+    color: $text-color-light;
+    outline: none;
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    outline: none;
+    transform: translateY(-1px);
+  }
+}
+
+.contact-form {
+  box-shadow: 0 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.1),
+    0 0.6rem 2rem 0 rgba(0, 0, 0, 0.09);
+  color: $text-color-dark;
+  margin: 0 auto;
+  margin-top: 8rem;
+  margin-bottom: 12rem;
+  padding: 3rem 9rem;
+  width: 80%;
+}
+
+.form-container {
+  margin-top: 2rem;
+}
+
+.form-control {
+  border: solid 1px lighten($text-color-dark, 40%);
+  color: $text-color-dark;
+  font-size: 1.6rem;
+  outline: none;
+  resize: none;
+}
+
+.form-label {
+  font-size: 1.6rem;
+}
