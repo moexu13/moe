@@ -2,7 +2,8 @@
   <div class="wrapper">
     <div class="header">
       <img src="~assets/images/logo.png" />
-      Melissa Albarella
+      <span class="header__text">Melissa Albarella</span>
+      <span class="header__tagline">Coding with Love</span>
     </div>
     <!-- <Menu /> -->
     <div class="hero">
@@ -16,13 +17,7 @@
     </section>
     <TechBar />
     <Cards />
+    <h2 class="section__heading">Latest Posts</h2>
+    <Footer />
   </div>
 </template>
-
-export default {
-  head() {
-    return {
-      script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
-    };
-  },
-};
