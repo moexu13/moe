@@ -3,7 +3,6 @@
     <div class="header">
       <img src="~assets/images/logo.png" />
       <span class="header__text">Melissa Albarella</span>
-      <span class="header__tagline">Coding with Love</span>
     </div>
     <!-- <Menu /> -->
     <div class="hero">

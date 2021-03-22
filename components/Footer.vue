@@ -12,7 +12,7 @@
       </a>
     </div>
     <div class="footer__copy">
-      Copyright &copy; 2020 Melissa Albarella 
+      Copyright &copy; 2021 Melissa Albarella 
     </div>
   </footer>
 </template>
