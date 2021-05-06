@@ -1,7 +1,20 @@
-# site
+# Personal Site - Nuxt
+> This is the code for my personal site under development in Nuxt.
 
-## Build Setup
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Status](#status)
 
+## General info
+I started this in Nuxt but after learning more React I'm going to port the site.
+
+## Technologies
+* Nuxt using Vue version 2
+* Sass
+
+## Setup
 ```bash
 # install dependencies
 $ npm install
@@ -18,3 +31,7 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## Status
+Project is deprecated - redoing site in React instead of Vue.
+

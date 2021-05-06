@@ -4,7 +4,7 @@
     <div class="cards">
       <div class="cards__card">
         <div class="cards__card--image">
-          <a href="httos://clicksandrivets.com" target="_blank">
+          <a href="https://clicksandrivets.com" target="_blank">
             <img src="~assets/images/candr.png" alt="clicks and rivets site" />
           </a>
         </div>
@@ -14,7 +14,7 @@
       </div>
       <div class="cards__card">
         <div class="cards__card--image">
-          <a href="httos://highclasstree.services" target="_blank">
+          <a href="https://highclasstree.services" target="_blank">
             <img src="~assets/images/hcts.png" alt="high class tree services site" />
           </a>
         </div>
