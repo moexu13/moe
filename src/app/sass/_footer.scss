@@ -1,0 +1,25 @@
+.footer {
+  background-image: linear-gradient(to right bottom, $color-primary, $text-color-dark);
+  color: $color-white;
+  height: 10rem;
+  position: relative;
+
+  &__links {
+    bottom: 3rem;
+    font-size: 1.4rem;
+    left: 2rem;
+    letter-spacing: 5px;
+    position: absolute;
+
+    & a {
+      color: $color-white
+    }
+  }
+
+  &__copy {
+    bottom: 1rem;
+    font-size: 1rem;
+    left: 2rem;
+    position: absolute;
+  }
+}
