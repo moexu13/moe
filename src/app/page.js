@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import heroImage from "../../public/code_hero.jpeg";
 
 export default function Home() {
   return (
@@ -31,10 +32,8 @@ export default function Home() {
       <div className={styles.center}>
         <Image
           className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
+          src={heroImage}
+          alt="Logo"
           priority
         />
       </div>
