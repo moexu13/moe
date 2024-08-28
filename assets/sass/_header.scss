@@ -1,26 +1,21 @@
 .header {
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-image: linear-gradient(to right, $color-primary-light, $color-primary);
-  color: transparent;
-  font-family: "Lovers Quarrel", cursive;
-  font-size: 2rem;
-  font-weight: bold;
-  height: 4rem;
-  letter-spacing: 2px;
-  line-height: 4rem;
-  padding-left: 2rem;
+  background-image: linear-gradient(to right, $color-primary-dark, $color-tertiary-dark);
+  position: relative;
 
-  & img {
-    height: 3.6rem;
-    width: 3.6rem;
+  &-text {
+    color: $color-white;
+    font-family: "Lovers Quarrel", cursive;
+    font-size: 8rem;
+    left: 2rem;
+    position: absolute;
+    top: 2rem;
   }
 }
 
-.hero__image {
-  height: 40rem;
+.hero-image {
+  height: 40vw;
   object-fit: cover;
-  opacity: 0.95;
+  opacity: 0.15;
   width: 100%;
 }
 
