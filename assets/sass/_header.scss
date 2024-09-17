@@ -2,18 +2,25 @@
   background-image: linear-gradient(to right, $color-primary-dark, $color-tertiary-dark);
   position: relative;
 
+  &-logo {
+    height: 10rem;
+    left: 1rem;
+    position: absolute;
+    top: 1.5rem;
+  }
+
   &-text {
     color: $color-white;
     font-family: "Lovers Quarrel", cursive;
     font-size: 8rem;
-    left: 2rem;
+    left: 12rem;
     position: absolute;
     top: 2rem;
   }
 }
 
 .hero-image {
-  height: 40vw;
+  height: 70vh;
   object-fit: cover;
   opacity: 0.15;
   width: 100%;
