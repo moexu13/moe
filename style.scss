@@ -1,4 +1,4 @@
-@import "./assets/sass/variables.scss";
+@use "assets/sass/variables.scss";
 
-@import "./assets/sass/base.scss";
-@import "./assets/sass/header.scss";
+@use "assets/sass/base.scss";
+@use "assets/sass/header.scss";

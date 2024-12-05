@@ -1,3 +1,5 @@
+@use "variables";
+
 *,
 *::after,
 *::before {
@@ -12,11 +14,11 @@ html {
 }
 
 body {
-  background-color: $color-white;
+  background-color: variables.$dark-background;
   box-sizing: border-box;
-  color: $text-color-dark;
+  color: variables.$text-color-dark;
   font-family: "open sans", europa, sans-serif;
-  font-size: $default-font-size;
+  font-size: variables.$default-font-size;
 }
 
 h1 {
