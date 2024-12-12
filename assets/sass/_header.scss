@@ -1,30 +1,22 @@
 @use "variables";
 
-.header {  
-  background: rgba(44, 19, 31, 0.1);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 1.6rem;
-  box-shadow: 0 4px 3rem rgba(0, 0, 0, 0.1);
+.header { 
+  align-items: center;
   display: flex;
-  flex-direction: column;
-  height: 11rem;
+  flex-direction: row;
   justify-content: center;
+  margin: 0 auto;
+  margin-top: 10vh;
   width: 52rem;
 
   &-logo {
     height: 10rem;
-    left: 1rem;
-    position: absolute;
-    top: 1.5rem;
+    margin-right: 2rem;
   }
 
   &-text {
     color: variables.$color-white;
     font-family: "Lovers Quarrel", cursive;
     font-size: 8rem;
-    left: 12rem;
-    position: absolute;
-    top: 2rem;
   }
 }

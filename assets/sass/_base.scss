@@ -32,3 +32,18 @@ h2 {
 h3 {
   font-size: 1.4rem;
 }
+
+nav > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+}
+
+nav > ul > li > a {
+  color: variables.$text-color-light;
+  font-size: 1.7rem;
+  padding: 1rem;
+  text-decoration: none;
+}
+
