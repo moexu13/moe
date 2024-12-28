@@ -43,7 +43,15 @@ nav > ul {
 nav > ul > li > a {
   color: variables.$text-color-light;
   font-size: 1.7rem;
-  padding: 1rem;
+  padding: 2rem;
   text-decoration: none;
+
+  &:hover {
+    color: variables.$color-secondary;
+  }
+
+  &:active {
+    color: variables.$color-secondary;
+  }
 }
 
