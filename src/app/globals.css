@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --text-light: #ffffff;
+  --text-dark: #171717;
+  --primary: #2c5eb4;
+  --secondary: #281a37;
+  --tertiary: #ca677e;
+  --quaternary: #3face8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,7 +19,20 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-light);
+  background: var(--secondary);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Open Sans", Helvetica, sans-serif;
+}
+
+h1 {
+  font-family: "Lovers Quarrel", Helvetica, sans-serif;
+  font-size: 5rem;
+}
+
+h2 {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-size: 1.5rem;
 }
