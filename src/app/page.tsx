@@ -5,7 +5,7 @@ import NavBar from "@/components/NavBar";
 const Home = () => {
   return (
     <main className="min-h-screen">
-      <header className="flex items-center gap-4 h-16 bg-gradient-radial from-[var(--color-primary)] to-[var(--color-primary)]/60">
+      <header className="flex items-center gap-4 h-12 bg-radial from-(--color-primary) to-(--color-primary) to-80%">
         <Image 
           src="/logo.png" 
           alt="logo with pretty sweet watercolor heart between code braces" 
