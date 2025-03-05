@@ -15,7 +15,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${loversQuarrel.className} ${openSans.className} antialiased bg-[url('/bg.jpeg')] bg-cover bg-center bg-no-repeat`}
+        // className={`${loversQuarrel.className} ${openSans.className} antialiased bg-[url('/bg.jpeg')] bg-cover bg-center bg-no-repeat`}
+        className={`${loversQuarrel.className} ${openSans.className} antialiased`}
       >
         {children}
       </body>

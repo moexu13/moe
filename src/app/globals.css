@@ -3,24 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --text-light: #ededed;
-  --text-dark: #171717;
+  --color-black: #171717;
+  --color-white: #ededed;
   --color-primary: #0e407a;
   --color-secondary: #ebb261;
   --color-tertiary: #020e23;
-  --color-quaternary: #1f2631;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: var(--color-tertiary);
-    --foreground: var(--text-light);
+    --background: var(--color-white);
+    --foreground: var(--color-black);
   }
 }
 
 body {
   color: var(--text-light);
-  background: var(--color-primary);
+  background: var(--color-tertiary);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
