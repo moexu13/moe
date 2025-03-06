@@ -1,5 +1,6 @@
+import Image from "next/image";
 import type { Metadata } from "next";
-import { loversQuarrel, openSans } from "./fonts";
+
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -14,9 +15,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${loversQuarrel.className} ${openSans.className} antialiased bg-[url(/public/bg.jpeg)] bg-cover bg-center bg-no-repeat`}
-      >
+      <body>
+        <Image
+          src="/bg.jpeg"
+          alt=""
+          fill
+          style={{ objectFit: "cover", zIndex: -1 }}
+        />
         {children}
       </body>
     </html>

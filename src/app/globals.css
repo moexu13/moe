@@ -34,14 +34,11 @@
 @media (prefers-color-scheme: light) {
   :root {
     --background: var(--color-white);
-    --foreground: var(--color-black);
+    --foreground: var(--color-tertiary);
   }
 }
 
 body {
-  color: var(--text-light);
+  color: var(--color-white);
   background: var(--color-tertiary);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
