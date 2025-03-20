@@ -25,20 +25,21 @@
 
 :root {
   --color-black: #171717;
+  --color-dark-gray: #020e23;
   --color-white: #ededed;
-  --color-primary: #0e407a;
-  --color-secondary: #ebb261;
-  --color-tertiary: #020e23;
+  --color-primary: #241335;
+  --color-secondary: #3550ca;
+  --color-tertiary: #c44b66;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --background: var(--color-white);
-    --foreground: var(--color-tertiary);
+    --foreground: var(--color-dark-gray);
   }
 }
 
 body {
   color: var(--color-white);
-  background: var(--color-tertiary);
+  background: var(--color-primary);
 }

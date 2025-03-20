@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 import "./globals.css";
+import { loversQuarrel, openSans } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Melissa Albarella",
@@ -14,15 +15,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <Image
-          src="/bg.jpeg"
-          alt=""
-          fill
-          style={{ objectFit: "cover", zIndex: -1 }}
-        />
-        {children}
+    <html lang="en" className="h-full w-full overflow-x-hidden">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+      </head>
+      <body className={`${loversQuarrel.className} ${openSans.className} m-0 p-0 h-full w-full overflow-x-hidden`}>
+        <div className="fixed top-0 left-0 right-0 bottom-0 -z-10 overflow-hidden">
+          <Image
+            src="/bg.jpeg"
+            alt="Image of a laptop on a table with a pink and purple neonish background"
+            fill
+            priority
+            sizes="100vw"
+            style={{
+              objectFit: "cover",
+              objectPosition: "center",
+              zIndex: -1
+            }}
+          />
+        </div>
+        <div className="relative">
+          {children}
+        </div>
       </body>
     </html>
   );
