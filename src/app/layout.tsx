@@ -23,7 +23,7 @@ export default function RootLayout({
         <div className="fixed top-0 left-0 right-0 bottom-0 -z-10 overflow-hidden">
           <Image
             src="/bg.jpeg"
-            alt="Image of a laptop on a table with a pink and purple neonish background"
+            alt=""
             fill
             priority
             sizes="100vw"
@@ -33,6 +33,7 @@ export default function RootLayout({
               zIndex: -1
             }}
           />
+          <div className="absolute inset-0 bg-(--color-dark-gray)/70 backdrop-blur-xs" />
         </div>
         <div className="relative">
           {children}
