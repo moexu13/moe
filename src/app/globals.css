@@ -27,9 +27,9 @@
   --color-black: #171717;
   --color-dark-gray: #020e23;
   --color-white: #ededed;
-  --color-primary: #241335;
-  --color-secondary: #3550ca;
-  --color-tertiary: #c44b66;
+  --color-primary: #03045e;
+  --color-secondary: #ff90b3;
+  --color-tertiary: #57cc99;
 }
 
 @media (prefers-color-scheme: light) {

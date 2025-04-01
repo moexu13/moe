@@ -33,7 +33,7 @@ export default function RootLayout({
               zIndex: -1
             }}
           />
-          <div className="absolute inset-0 bg-(--color-dark-gray)/70 backdrop-blur-xs" />
+          <div className="absolute inset-0 bg-(--color-dark-gray)/90" />
         </div>
         <div className="relative">
           {children}
