@@ -1,17 +1,22 @@
 import Image from "next/image";
+import { loversQuarrel } from "./fonts";
+import NavBar from "@/components/NavBar";
 
-const Home = () => {
+export default function Home() {
   return (
-    <main className="min-h-screen">
-      <header className="pt-6 font-[family-name:var(--font-lovers-quarrel)]">
-        <div className="flex items-center justify-center gap-4 p-6">
-          <Image src="/logo.png" alt="logo with pretty sweet watercolor heart between code braces" width={80} height={80} />
-          <h1 className="text-8xl">Melissa Albarella</h1>
+    <div className="flex flex-col min-h-screen">
+      <header className="flex items-center gap-1 h-12 m-4">
+        <div className="p-2">
+          <Image 
+            src="/logo.png" 
+            alt="logo with pretty sweet watercolor heart between code braces" 
+            width={60} 
+            height={60}
+          />
         </div>
-        <h2 className="text-center text-md">Building inclusive digital experiences where every user's journey matters</h2>
+        <span className={`text-white text-5xl ${loversQuarrel.className}`}>Melissa Albarella</span>
+        <NavBar />
       </header>
-    </main>
+    </div>
   );
 }
-
-export default Home;

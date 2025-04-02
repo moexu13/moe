@@ -1,17 +1,8 @@
+import Image from "next/image";
 import type { Metadata } from "next";
-import { Lovers_Quarrel, Open_Sans } from "next/font/google";
+
 import "./globals.css";
-
-const loversQuarrel = Lovers_Quarrel({
-  variable: "--font-lovers-quarrel",
-  subsets: ["latin"],
-  weight: ["400"],
-});
-
-const openSans = Open_Sans({
-  variable: "--font-open-sans",
-  subsets: ["latin"],
-});
+import { loversQuarrel, openSans } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Melissa Albarella",
@@ -24,11 +15,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${loversQuarrel.variable} ${openSans.variable} antialiased bg-[url('/bg.jpeg')] bg-cover bg-center bg-no-repeat`}
-      >
-        {children}
+    <html lang="en" className="h-full w-full overflow-x-hidden">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+      </head>
+      <body className={`${loversQuarrel.className} ${openSans.className} m-0 p-0 h-full w-full overflow-x-hidden`}>
+        <div className="fixed top-0 left-0 right-0 bottom-0 -z-10 overflow-hidden">
+          <Image
+            src="/bg.jpeg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            style={{
+              objectFit: "cover",
+              objectPosition: "center",
+              zIndex: -1
+            }}
+          />
+          <div className="absolute inset-0 bg-(--color-dark-gray)/90" />
+        </div>
+        <div className="relative">
+          {children}
+        </div>
       </body>
     </html>
   );
