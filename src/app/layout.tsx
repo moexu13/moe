@@ -19,7 +19,9 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
       </head>
-      <body className={`${loversQuarrel.className} ${openSans.className} m-0 p-0 h-full w-full overflow-x-hidden`}>
+      <body
+        className={`${loversQuarrel.className} ${openSans.className} m-0 p-0 h-full w-full overflow-x-hidden`}
+      >
         <div className="fixed top-0 left-0 right-0 bottom-0 -z-10 overflow-hidden">
           <Image
             src="/bg.jpeg"
@@ -30,14 +32,12 @@ export default function RootLayout({
             style={{
               objectFit: "cover",
               objectPosition: "center",
-              zIndex: -1
+              zIndex: -1,
             }}
           />
           <div className="absolute inset-0 bg-(--color-dark-gray)/90" />
         </div>
-        <div className="relative">
-          {children}
-        </div>
+        <div className="relative">{children}</div>
       </body>
     </html>
   );
