@@ -12,9 +12,11 @@ export default function Home() {
           <h1 className={`text-8xl ${loversQuarrel.className}`}>Melissa Albarella</h1>
           <p className="text-lg">Web Developer</p>
         </section>
-        <section className="bg-(--color-primary) py-12 flex flex-col justify-center items-center mt-28">
-          <div className="w-full max-w-7xl px-16">
-            <h2 className="text-2xl mb-8 text-white text-left">Tech Stack</h2>
+        <section className="bg-(--color-primary) py-16 flex flex-col justify-center items-center mt-60 min-h-[400px]">
+          <div className="w-full max-w-[90%] flex flex-col justify-center items-center">
+            <div className="w-full mb-6">
+              <h2 className="text-2xl text-white text-left">Tech Stack</h2>
+            </div>
             <TechBar />
           </div>
         </section>

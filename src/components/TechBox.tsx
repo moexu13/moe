@@ -8,9 +8,10 @@ interface TechBoxProps {
 const TechBox = ({ icon, label }: TechBoxProps) => {
   return (
     <div
-      className="w-36 h-28 flex flex-col justify-between items-center px-4 pt-4 pb-2 border border-white/40 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors self-center"
+      className="w-28 sm:w-32 md:w-36 h-24 sm:h-26 md:h-28 flex flex-col items-center px-3 md:px-4 py-3 md:py-4 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors self-center"
     >
-      <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center mt-1">
+      <div className="h-2 md:h-3"></div>
+      <div className="w-6 sm:w-7 md:w-8 h-6 sm:h-7 md:h-8 flex-shrink-0 flex items-center justify-center">
         <Image
           src={icon}
           alt={label}
@@ -21,7 +22,8 @@ const TechBox = ({ icon, label }: TechBoxProps) => {
           }}
         />
       </div>
-      <span className="text-white text-sm text-center mb-2">{label}</span>
+      <div className="flex-grow min-h-[1rem]"></div>
+      <span className="text-white text-xs sm:text-sm text-center mb-1">{label}</span>
     </div>
   );
 };
