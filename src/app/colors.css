@@ -1,0 +1,30 @@
+/* For now use secondary color for all icons, but these are the official colors if they're ever needed */
+
+:root {
+  --color-black: #171717;
+  --color-dark-gray: #020e23;
+  --color-white: #fbfbff;
+  --color-primary: #19202f;
+  --color-secondary: #da627d;
+  --color-tertiary: #70b77e;
+
+  /* Tech Colors */
+  --color-react: #61dafb;
+  --color-html: #e34f26;
+  --color-css: #663399;
+  --color-tailwind: #06b6d4;
+  --color-typescript: #3178c6;
+  --color-javascript: #f7df1e;
+  --color-node: #5fa04e;
+  --color-nextjs: #000000;
+  --color-postgres: #4169e1;
+  --color-mysql: #4479a1;
+  --color-mongodb: #47a248;
+  --color-prisma: #2d3748;
+  --color-vitest: #6e9f18;
+
+  /* Social Colors */
+  --color-github: #181717;
+  --color-bluesky: #0285ff;
+  --color-linkedin: #0077b5;
+}
