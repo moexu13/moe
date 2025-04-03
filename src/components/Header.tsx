@@ -15,14 +15,6 @@ export default function Header() {
           <ul className="flex items-center gap-8">
             <li>
               <Link
-                href="/about"
-                className="text-white hover:text-(--color-secondary) text-lg transition-colors"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
                 href="/portfolio"
                 className="text-white hover:text-(--color-secondary) text-lg transition-colors"
               >
