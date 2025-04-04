@@ -10,15 +10,21 @@ const TechBar = () => {
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
-      // Scroll approximately 3 items (each ~140px wide + 64px margin)
-      scrollContainerRef.current.scrollBy({ left: -600, behavior: 'smooth' });
+      // Determine scroll amount based on screen size
+      const scrollAmount = window.innerWidth < 640 ? -300 : 
+                          window.innerWidth < 768 ? -400 : -600;
+      
+      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
-      // Scroll approximately 3 items
-      scrollContainerRef.current.scrollBy({ left: 600, behavior: 'smooth' });
+      // Determine scroll amount based on screen size
+      const scrollAmount = window.innerWidth < 640 ? 300 : 
+                          window.innerWidth < 768 ? 400 : 600;
+      
+      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
 
@@ -55,29 +61,29 @@ const TechBar = () => {
 
   return (
     <div className="relative max-w-7xl w-full flex justify-center">
-      {/* Left Arrow */}
+      {/* Left Arrow - increased z-index and adjusted position */}
       <button 
         onClick={scrollLeft}
         disabled={isLeftDisabled}
-        className={`absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full transition-colors ${
+        className={`absolute left-2 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full transition-colors ${
           isLeftDisabled 
-            ? 'bg-white/5 text-gray-400 cursor-not-allowed' 
-            : 'bg-white/10 text-white hover:bg-white/20 cursor-pointer'
+            ? 'bg-black/30 text-gray-400 cursor-not-allowed' 
+            : 'bg-black/40 text-white hover:bg-black/50 cursor-pointer'
         }`}
         aria-label="Scroll left"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="current">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="sm:w-6 sm:h-6">
           <polyline points="15 18 9 12 15 6"></polyline>
         </svg>
       </button>
 
       {/* Container with fade effect and glow */}
-      <div className="relative overflow-hidden rounded-xl w-full max-w-[90%]">
+      <div className="relative overflow-hidden rounded-xl w-full max-w-[80%] sm:max-w-[85%] md:max-w-[90%]">
         {/* Left fade gradient */}
         <div 
-          className="absolute left-0 top-0 bottom-0 w-16 md:w-24 pointer-events-none z-10"
+          className="absolute left-0 top-0 bottom-0 w-12 sm:w-16 md:w-24 pointer-events-none z-10"
           style={{
-            background: 'linear-gradient(270deg, rgba(25,32,47,0) 0%, rgba(25,32,47,0.5) 40%, rgba(25,32,47,1) 80%)'
+            background: 'linear-gradient(270deg, rgba(25,32,47,0) 0%, rgba(25,32,47,0.5) 50%, rgba(25,32,47,0.9) 90%)'
           }}
         ></div>
         
@@ -110,18 +116,18 @@ const TechBar = () => {
         </div>
       </div>
 
-      {/* Right Arrow */}
+      {/* Right Arrow - closer to center on mobile */}
       <button 
         onClick={scrollRight}
         disabled={isRightDisabled}
-        className={`absolute right-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full transition-colors ${
+        className={`absolute right-2 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full transition-colors ${
           isRightDisabled 
             ? 'bg-white/5 text-gray-400 cursor-not-allowed' 
             : 'bg-white/10 text-white hover:bg-white/20 cursor-pointer'
         }`}
         aria-label="Scroll right"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="current">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="sm:w-6 sm:h-6">
           <polyline points="9 18 15 12 9 6"></polyline>
         </svg>
       </button>
