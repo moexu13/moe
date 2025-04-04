@@ -15,7 +15,7 @@ export default function Header() {
           <ul className="flex items-center gap-8">
             <li>
               <Link
-                href="/portfolio"
+                href="#portfolio"
                 className="text-white hover:text-(--color-secondary) text-lg transition-colors"
               >
                 Portfolio
