@@ -21,35 +21,35 @@ const ContactForm = () => {
 
   const validateForm = (): boolean => {
     const newErrors: Partial<FormData> = {};
-    
+
     if (!formData.name.trim()) {
       newErrors.name = "Name is required";
     }
-    
+
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Please enter a valid email address";
     }
-    
+
     if (!formData.message.trim()) {
       newErrors.message = "Message is required";
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
-    
+
     setIsSubmitting(true);
     setSubmitStatus("idle");
-    
+
     try {
       const response = await fetch("https://formspree.io/f/mleoakkr", {
         method: "POST",
@@ -58,23 +58,21 @@ const ContactForm = () => {
         },
         body: JSON.stringify(formData),
       });
-      
+
       if (response.ok) {
         setSubmitStatus("success");
         setFormData({ name: "", email: "", message: "" });
       } else {
         setSubmitStatus("error");
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     // Clear error when user starts typing
@@ -100,9 +98,7 @@ const ContactForm = () => {
           } text-white focus:outline-none focus:ring-2 focus:ring-white/30`}
           placeholder="Your name"
         />
-        {errors.name && (
-          <p className="text-sm text-red-500">{errors.name}</p>
-        )}
+        {errors.name && <p className="text-sm text-red-500">{errors.name}</p>}
       </div>
 
       <div className="space-y-2">
@@ -120,9 +116,7 @@ const ContactForm = () => {
           } text-white focus:outline-none focus:ring-2 focus:ring-white/30`}
           placeholder="your@email.com"
         />
-        {errors.email && (
-          <p className="text-sm text-red-500">{errors.email}</p>
-        )}
+        {errors.email && <p className="text-sm text-red-500">{errors.email}</p>}
       </div>
 
       <div className="space-y-2">
@@ -140,9 +134,7 @@ const ContactForm = () => {
           } text-white focus:outline-none focus:ring-2 focus:ring-white/30 resize-none`}
           placeholder="Your message..."
         />
-        {errors.message && (
-          <p className="text-sm text-red-500">{errors.message}</p>
-        )}
+        {errors.message && <p className="text-sm text-red-500">{errors.message}</p>}
       </div>
 
       <div className="flex justify-center">
@@ -156,18 +148,14 @@ const ContactForm = () => {
       </div>
 
       {submitStatus === "success" && (
-        <p className="text-center text-green-500">
-          Message sent successfully!
-        </p>
+        <p className="text-center text-green-500">Message sent successfully!</p>
       )}
-      
+
       {submitStatus === "error" && (
-        <p className="text-center text-red-500">
-          Something went wrong. Please try again later.
-        </p>
+        <p className="text-center text-red-500">Something went wrong. Please try again later.</p>
       )}
     </form>
   );
 };
 
-export default ContactForm; 
+export default ContactForm;
