@@ -2,6 +2,7 @@
 
 import TechBox from "./TechBox";
 import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 
 const TechBar = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -70,20 +71,13 @@ const TechBar = () => {
         }`}
         aria-label="Scroll left"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="sm:w-6 sm:h-6"
-        >
-          <polyline points="15 18 9 12 15 6"></polyline>
-        </svg>
+        <Image
+          src="/icons/chevron-left.svg"
+          alt="Scroll left"
+          width={20}
+          height={20}
+          className="filter invert"
+        />
       </button>
 
       {/* Container with fade effect and glow */}
@@ -164,20 +158,13 @@ const TechBar = () => {
         }`}
         aria-label="Scroll right"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="sm:w-6 sm:h-6"
-        >
-          <polyline points="9 18 15 12 9 6"></polyline>
-        </svg>
+        <Image
+          src="/icons/chevron-right.svg"
+          alt="Scroll right"
+          width={20}
+          height={20}
+          className="filter invert"
+        />
       </button>
     </div>
   );

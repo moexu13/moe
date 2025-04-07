@@ -28,7 +28,7 @@ const NavBar = () => {
     <nav className="fixed top-0 right-0 z-50" ref={navbarRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-2 right-2 md:top-4 md:right-4 z-50 flex flex-col items-end gap-1 md:gap-1.5 w-10 md:w-12 h-10 md:h-12 p-2 md:p-3 rounded-md"
+        className="fixed top-2 right-2 md:top-4 md:right-6 z-50 flex flex-col items-end gap-1 md:gap-1.5 w-10 md:w-12 h-10 md:h-12 p-2 md:p-3 rounded-md"
         aria-label="Toggle menu"
       >
         <span
@@ -43,7 +43,9 @@ const NavBar = () => {
       </button>
 
       <div
-        className={`fixed top-0 right-0 h-screen backdrop-blur-md w-[200px] sm:w-[250px] md:w-64 transform transition-all duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"} pt-16 md:pt-20 px-4 md:px-6`}
+        className={`fixed top-0 right-0 h-screen w-[200px] sm:w-[250px] md:w-64 transform transition-all duration-300 ease-in-out ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        } pt-16 md:pt-20 px-4 md:px-6 bg-(--color-primary)`}
       >
         <div className="flex flex-col space-y-5 md:space-y-6">
           <Link

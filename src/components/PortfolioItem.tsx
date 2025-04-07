@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-
 interface PortfolioProjectProps {
   title: string;
   description: string;
