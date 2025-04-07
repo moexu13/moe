@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Header() {
+const Header = () => {
   return (
     <header className="fixed top-20 left-0 right-0 flex items-center justify-center z-50">
       <div className="px-30 py-4 rounded-xl shadow-[0_0_5px_rgba(220,220,220,0.20)] backdrop-blur-sm bg-(--color-dark-gray)/10 inline-flex items-center mx-auto">
@@ -42,4 +42,6 @@ export default function Header() {
       </div>
     </header>
   );
-}
+};
+
+export default Header;

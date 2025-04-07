@@ -1,11 +1,13 @@
+import { loversQuarrel } from "./fonts";
+
+import ContactForm from "@/components/ContactForm";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import NavBar from "@/components/NavBar";
-import { loversQuarrel } from "./fonts";
-import TechBar from "@/components/TechBar";
 import Portfolio from "@/components/Portfolio";
-import ContactForm from "@/components/ContactForm";
+import TechBar from "@/components/TechBar";
 
-export default function Home() {
+const Home = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <div className="hidden md:block">
@@ -44,6 +46,9 @@ export default function Home() {
           <ContactForm />
         </section>
       </main>
+      <Footer />
     </div>
   );
-}
+};
+
+export default Home;

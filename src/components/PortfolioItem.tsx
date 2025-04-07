@@ -55,9 +55,16 @@ const PortfolioProject = ({
           </Link>
           <Link
             href={link}
-            className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg transition-colors"
+            className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-2"
           >
-            Live Site →
+            Live Site
+            <Image
+              src="/icons/arrow.svg"
+              alt="arrow"
+              width={24}
+              height={24}
+              className="filter invert"
+            />
           </Link>
         </div>
       </div>
