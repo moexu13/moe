@@ -47,16 +47,21 @@ const ContactForm = () => {
       return;
     }
 
+    const formDataWithKey = {
+      ...formData,
+      access_key: "4353dfe9-da01-4ea8-8fe3-6f67fdbe2ea3",
+    };
+
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
     try {
-      const response = await fetch("https://formspree.io/f/mleoakkr", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(formDataWithKey),
       });
 
       if (response.ok) {
