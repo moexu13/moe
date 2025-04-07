@@ -68,7 +68,7 @@ const NavBar = () => {
             Portfolio
           </Link>
           <Link
-            href="/contact"
+            href="#contact"
             className="text-white text-lg md:text-xl hover:text-white/70 transition"
             onClick={() => setIsOpen(false)}
           >

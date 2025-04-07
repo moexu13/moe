@@ -31,7 +31,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="/contact"
+                href="#contact"
                 className="text-white hover:text-(--color-secondary) text-lg transition-colors"
               >
                 Contact
