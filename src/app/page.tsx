@@ -3,6 +3,7 @@ import NavBar from "@/components/NavBar";
 import { loversQuarrel } from "./fonts";
 import TechBar from "@/components/TechBar";
 import Portfolio from "@/components/Portfolio";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   return (
@@ -26,12 +27,21 @@ export default function Home() {
             <TechBar />
           </div>
         </section>
-        <section id="portfolio" className="bg-(--color-secondary)/90 py-8 sm:py-12 md:py-16 flex flex-col justify-center items-center min-h-[200px] md:min-h-[300px]">
+        <section
+          id="portfolio"
+          className="bg-(--color-secondary)/90 py-8 sm:py-12 md:py-16 flex flex-col justify-center items-center min-h-[200px] md:min-h-[300px]"
+        >
           <section className="w-full flex justify-center items-center">
             <div className="w-full max-w-[95%]">
               <Portfolio />
             </div>
           </section>
+        </section>
+        <section
+          id="contact"
+          className="bg-(--color-primary) py-8 sm:py-12 md:py-16 flex flex-col justify-center items-center min-h-[200px] md:min-h-[300px]"
+        >
+          <ContactForm />
         </section>
       </main>
     </div>
