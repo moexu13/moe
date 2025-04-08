@@ -11,13 +11,14 @@ export const generateStaticParams = async () => {
   }));
 };
 
-type Props = {
+interface PageProps {
   params: {
     slug: string;
   };
-};
+  searchParams: { [key: string]: string | string[] | undefined };
+}
 
-const BlogPost = async ({ params }: Props) => {
+const BlogPost = async ({ params }: PageProps) => {
   try {
     const post = await getPostData(params.slug);
 
