@@ -11,13 +11,18 @@ export const generateStaticParams = async () => {
   }));
 };
 
-const BlogPost = async ({ params }: { params: { slug: string } }) => {
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
+const BlogPost = async ({ params }: Props) => {
   try {
-    const { slug } = await params;
-    const post = await getPostData(slug);
+    const post = await getPostData(params.slug);
 
     if (!post) {
-      notFound();
+      return notFound();
     }
 
     return (
@@ -72,7 +77,7 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
     );
   } catch (error) {
     console.error("Error rendering blog post:", error);
-    notFound();
+    return notFound();
   }
 };
 
