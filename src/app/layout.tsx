@@ -5,13 +5,14 @@ import "./globals.css";
 import { loversQuarrel, openSans } from "./fonts";
 
 export const metadata: Metadata = {
-  title: "Melissa Albarella",
-  description: "Melissa Albarella's personal website",
+  title: "Melissa's Portfolio",
+  description: "A showcase of my web development projects and skills",
+  metadataBase: new URL("https://melissa-albarella.dev"),
   openGraph: {
-    title: "Melissa Albarella",
-    description: "Melissa Albarella's personal website",
+    title: "Melissa's Portfolio",
+    description: "A showcase of my web development projects and skills",
     url: "https://melissa-albarella.dev",
-    siteName: "Melissa Albarella",
+    siteName: "Melissa's Portfolio",
     images: [
       {
         url: "/preview.jpg", // You'll need to add this image to your public folder
@@ -25,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Melissa Albarella",
-    description: "Melissa Albarella's personal website",
+    title: "Melissa's Portfolio",
+    description: "A showcase of my web development projects and skills",
     images: ["/preview.jpg"],
   },
 };
