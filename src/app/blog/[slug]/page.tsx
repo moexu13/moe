@@ -2,25 +2,19 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import Footer from "@/components/Footer";
-import { getPostData, getSortedPostsData } from "@/lib/markdown";
+import { getPostData } from "@/lib/markdown";
 
-export const generateStaticParams = async () => {
-  const posts = await getSortedPostsData();
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
-};
+type Params = Promise<{ slug: string }>;
 
 interface PageProps {
-  params: {
-    slug: string;
-  };
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: Params;
 }
 
-const BlogPost = async ({ params }: PageProps) => {
+const Page = async ({ params }: PageProps) => {
+  const { slug } = await params;
+
   try {
-    const post = await getPostData(params.slug);
+    const post = await getPostData(slug);
 
     if (!post) {
       return notFound();
@@ -82,4 +76,4 @@ const BlogPost = async ({ params }: PageProps) => {
   }
 };
 
-export default BlogPost;
+export default Page;
