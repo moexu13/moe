@@ -1,5 +1,5 @@
-import Image from "next/image";
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import "./globals.css";
 import { loversQuarrel, openSans } from "./fonts";
@@ -7,6 +7,28 @@ import { loversQuarrel, openSans } from "./fonts";
 export const metadata: Metadata = {
   title: "Melissa Albarella",
   description: "Melissa Albarella's personal website",
+  openGraph: {
+    title: "Melissa Albarella",
+    description: "Melissa Albarella's personal website",
+    url: "https://melissa-albarella.dev",
+    siteName: "Melissa Albarella",
+    images: [
+      {
+        url: "/preview.jpg", // You'll need to add this image to your public folder
+        width: 1200,
+        height: 630,
+        alt: "Melissa Albarella's website preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Melissa Albarella",
+    description: "Melissa Albarella's personal website",
+    images: ["/preview.jpg"],
+  },
 };
 
 export default function RootLayout({

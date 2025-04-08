@@ -1,11 +1,11 @@
-import { loversQuarrel } from "./fonts";
-
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import NavBar from "@/components/NavBar";
 import Portfolio from "@/components/Portfolio";
 import TechBar from "@/components/TechBar";
+
+import { loversQuarrel } from "./fonts";
 
 const Home = () => {
   return (

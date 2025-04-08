@@ -1,8 +1,9 @@
 "use client";
 
-import TechBox from "./TechBox";
-import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
+import { useRef, useState, useEffect } from "react";
+
+import TechBox from "./TechBox";
 
 const TechBar = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
