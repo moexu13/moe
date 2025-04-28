@@ -28,7 +28,7 @@ const NavBar = () => {
     <nav className="fixed top-0 right-0 z-50" ref={navbarRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-2 right-2 md:top-4 md:right-6 z-50 flex flex-col items-end gap-1 md:gap-1.5 w-10 md:w-12 h-10 md:h-12 p-2 md:p-3 rounded-md"
+        className="fixed top-2 right-2 md:top-4 md:right-6 z-50 flex flex-col items-end gap-1 md:gap-1.5 w-10 md:w-12 h-10 md:h-12 p-2 md:p-3 rounded-md cursor-pointer"
         aria-label="Toggle menu"
       >
         <span
@@ -50,28 +50,28 @@ const NavBar = () => {
         <div className="flex flex-col space-y-5 md:space-y-6">
           <Link
             href="/"
-            className="text-white text-lg md:text-xl hover:text-white/70 transition"
+            className="text-white text-lg md:text-xl hover:text-(--color-tertiary) transition"
             onClick={() => setIsOpen(false)}
           >
             Home
           </Link>
           <Link
             href="/blog"
-            className="text-white text-lg md:text-xl hover:text-white/70 transition"
+            className="text-white text-lg md:text-xl hover:text-(--color-tertiary) transition"
             onClick={() => setIsOpen(false)}
           >
             Blog
           </Link>
           <Link
             href="#portfolio"
-            className="text-white text-lg md:text-xl hover:text-white/70 transition"
+            className="text-white text-lg md:text-xl hover:text-(--color-tertiary) transition"
             onClick={() => setIsOpen(false)}
           >
             Portfolio
           </Link>
           <Link
             href="#contact"
-            className="text-white text-lg md:text-xl hover:text-white/70 transition"
+            className="text-white text-lg md:text-xl hover:text-(--color-tertiary) transition"
             onClick={() => setIsOpen(false)}
           >
             Contact
