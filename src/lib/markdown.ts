@@ -20,6 +20,7 @@ export interface BlogPost {
 export async function getSortedPostsData(): Promise<BlogPost[]> {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
+
   const allPostsData = await Promise.all(
     fileNames.map(async (fileName) => {
       // Remove ".md" from file name to get id

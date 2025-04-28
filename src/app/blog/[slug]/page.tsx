@@ -1,79 +1,64 @@
 import Image from "next/image";
-import { notFound } from "next/navigation";
-
 import Footer from "@/components/Footer";
-import { getPostData } from "@/lib/markdown";
+import BlogBreadcrumb from "@/components/BlogBreadcrumb";
+import { getPostData, getSortedPostsData } from "@/lib/markdown";
 
-type Params = Promise<{ slug: string }>;
-
-interface PageProps {
-  params: Params;
+export async function generateStaticParams() {
+  const posts = await getSortedPostsData();
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
 }
 
-const Page = async ({ params }: PageProps) => {
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  const post = await getPostData(slug);
 
-  try {
-    const post = await getPostData(slug);
-
-    if (!post) {
-      return notFound();
-    }
-
-    return (
-      <>
-        <header className="relative h-[40vh] flex items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-4xl text-white mb-4">{post.title}</h1>
-            <div className="text-sm text-white/60">
-              {new Date(post.date + "T00:00:00").toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-                timeZone: "UTC",
-              })}
-            </div>
-          </div>
-        </header>
-
-        <main className="container mx-auto px-4 -mt-8">
-          <article className="max-w-4xl mx-auto">
-            <div className="relative h-96 mb-8 rounded-xl overflow-hidden">
-              <Image
-                src={post.image}
-                alt={post.title}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
-                style={{
-                  objectFit: "cover",
-                }}
-              />
-            </div>
-            <div className="flex flex-wrap gap-2 mb-8">
-              {post.tags.map((tag, index) => (
-                <span
-                  key={index}
-                  className="bg-white/10 text-white/90 text-sm px-3 py-1 rounded-full"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-            <div
-              className="prose prose-invert max-w-none"
-              dangerouslySetInnerHTML={{ __html: post.content }}
-            />
-          </article>
-        </main>
-        <div className="mt-16">
-          <Footer />
+  return (
+    <>
+      <header className="relative h-[40vh] flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-xl md:text-4xl text-white mb-4">{post.title}</h1>
+          <p className="text-lg text-white/80 max-w-2xl mx-auto px-4">{post.excerpt}</p>
         </div>
-      </>
-    );
-  } catch (error) {
-    console.error("Error rendering blog post:", error);
-    return notFound();
-  }
-};
+      </header>
 
-export default Page;
+      <main className="container mx-auto pl-0 pr-8 -mt-8 max-w-6xl">
+        <BlogBreadcrumb title={post.title} slug={post.slug} />
+
+        <article className="prose prose-invert max-w-none">
+          <div className="relative w-full h-[300px] md:h-[400px] mb-8 rounded-xl overflow-hidden">
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
+              style={{
+                objectFit: "cover",
+                objectPosition: "center",
+              }}
+              priority
+            />
+          </div>
+          <div className="flex flex-wrap gap-2 mb-8">
+            {post.tags?.map((tag, index) => (
+              <span
+                key={index}
+                className="bg-white/10 text-white/90 text-sm px-3 py-1 rounded-full"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+          <div
+            className="prose-headings:text-white prose-p:text-white/80 prose-a:text-white/80 prose-strong:text-white"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
+        </article>
+      </main>
+      <div className="mt-16">
+        <Footer />
+      </div>
+    </>
+  );
+}
