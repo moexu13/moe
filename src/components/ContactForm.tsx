@@ -146,7 +146,7 @@ const ContactForm = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-48 px-6 py-3 text-lg font-medium text-white bg-(--color-secondary) rounded-lg hover:bg-(--color-secondary)/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-48 px-6 py-3 text-lg font-medium text-white bg-(--color-tertiary) rounded-lg hover:bg-(--color-tertiary)/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting ? "Sending..." : "Send Message"}
         </button>
