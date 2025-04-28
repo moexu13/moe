@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { loversQuarrel } from "../fonts";
+
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
 import { getSortedPostsData } from "@/lib/markdown";
@@ -16,8 +18,10 @@ const Blog = async () => {
     <>
       <header className="relative h-[40vh] flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-6xl md:text-8xl text-white mb-4">Blog</h1>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto px-4">
+          <h1 className={`${loversQuarrel.className} text-6xl md:text-8xl text-white mb-4`}>
+            Blog
+          </h1>
+          <p className="text-md text-white/80 max-w-2xl mx-auto px-4">
             Thoughts, tutorials, and insights about web development
           </p>
         </div>
