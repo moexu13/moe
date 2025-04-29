@@ -3,8 +3,8 @@ import path from "path";
 
 import matter from "gray-matter";
 import { remark } from "remark";
-import html from "remark-html";
 import classNames from "remark-class-names";
+import html from "remark-html";
 
 const postsDirectory = path.join(process.cwd(), "src/app/blog/posts");
 

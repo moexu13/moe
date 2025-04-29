@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Inter } from "next/font/google";
 
 import "./globals.css";
 import "./colors.css";
-import { loversQuarrel, openSans } from "./fonts";
 import Breadcrumb from "@/components/Breadcrumb";
 
-const inter = Inter({ subsets: ["latin"] });
+import { loversQuarrel, openSans } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Melissa's Portfolio",

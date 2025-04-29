@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { loversQuarrel } from "../fonts";
-
 import Footer from "@/components/Footer";
-import Breadcrumb from "@/components/Breadcrumb";
 import { getSortedPostsData } from "@/lib/markdown";
+
+import { loversQuarrel } from "../fonts";
 
 const Blog = async () => {
   const allPosts = await getSortedPostsData();

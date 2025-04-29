@@ -1,5 +1,5 @@
 declare module "remark-class-names" {
-  import { Plugin } from "unified";
+  import { Plugin } from "./unified";
 
   interface ClassNamesOptions {
     [key: string]: string;
