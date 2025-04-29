@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { Inter } from "next/font/google";
 
 import "./globals.css";
+import "./colors.css";
 import { loversQuarrel, openSans } from "./fonts";
+import Breadcrumb from "@/components/Breadcrumb";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Melissa's Portfolio",
@@ -45,6 +50,7 @@ export default function RootLayout({
       <body
         className={`${loversQuarrel.className} ${openSans.className} m-0 p-0 h-full w-full overflow-x-hidden`}
       >
+        <Breadcrumb fixed />
         <div className="fixed top-0 left-0 right-0 bottom-0 -z-10 overflow-hidden">
           <Image
             src="/bg.jpeg"

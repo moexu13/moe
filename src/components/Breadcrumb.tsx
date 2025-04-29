@@ -1,18 +1,43 @@
 "use client";
 
+import { usePathname } from "next/navigation";
+
 interface BreadcrumbProps {
-  items: {
-    label: string;
-    href: string;
-    current?: boolean;
-  }[];
+  fixed?: boolean;
 }
 
-const Breadcrumb = ({ items }: BreadcrumbProps) => {
-  return (
+const Breadcrumb = ({ fixed = false }: BreadcrumbProps) => {
+  const pathname = usePathname();
+
+  // Only show breadcrumb on blog-related pages
+  if (!pathname.startsWith("/blog")) {
+    return null;
+  }
+
+  const getBreadcrumbItems = () => {
+    if (pathname === "/blog") {
+      return [
+        { label: "Home", href: "/" },
+        { label: "Blog", href: "/blog", current: true },
+      ];
+    }
+
+    if (pathname.startsWith("/blog/")) {
+      const slug = pathname.split("/")[2];
+      return [
+        { label: "Home", href: "/" },
+        { label: "Blog", href: "/blog" },
+        { label: slug, href: pathname, current: true },
+      ];
+    }
+
+    return [];
+  };
+
+  const breadcrumbContent = (
     <nav className="flex relative z-50" aria-label="Breadcrumb">
       <ol className="inline-flex items-center space-x-1 md:space-x-3">
-        {items.map((item, index) => (
+        {getBreadcrumbItems().map((item, index) => (
           <li key={item.href} className="inline-flex items-center">
             {index > 0 && (
               <svg
@@ -57,6 +82,16 @@ const Breadcrumb = ({ items }: BreadcrumbProps) => {
       </ol>
     </nav>
   );
+
+  if (fixed) {
+    return (
+      <div className="fixed top-0 left-0 right-0 bg-[var(--color-primary)]/90 backdrop-blur-sm z-50">
+        <div className="container mx-auto px-4 py-4">{breadcrumbContent}</div>
+      </div>
+    );
+  }
+
+  return breadcrumbContent;
 };
 
 export default Breadcrumb;

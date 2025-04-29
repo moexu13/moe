@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Footer from "@/components/Footer";
-import BlogBreadcrumb from "@/components/BlogBreadcrumb";
 import { getPostData, getSortedPostsData } from "@/lib/markdown";
 
 export async function generateStaticParams() {
@@ -23,11 +22,9 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         </div>
       </header>
 
-      <main className="container mx-auto pl-0 pr-8 -mt-8 max-w-6xl">
-        <BlogBreadcrumb title={post.title} slug={post.slug} />
-
+      <main className="container mx-auto pl-0 pr-8 -mt-8 max-w-6xl pt-2">
         <article className="prose prose-invert max-w-none">
-          <div className="relative w-full h-[300px] md:h-[400px] mb-8 rounded-xl overflow-hidden">
+          <div className="relative w-full h-[250px] md:h-[350px] mb-4 rounded-xl overflow-hidden">
             <Image
               src={post.image}
               alt={post.title}
@@ -40,7 +37,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
               priority
             />
           </div>
-          <div className="flex flex-wrap gap-2 mb-8">
+          <div className="flex flex-wrap gap-2 mb-16">
             {post.tags?.map((tag, index) => (
               <span
                 key={index}
@@ -51,7 +48,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             ))}
           </div>
           <div
-            className="prose-headings:text-white prose-p:text-white/80 prose-a:text-white/80 prose-strong:text-white"
+            className="prose prose-invert max-w-none [&>p]:mb-6 [&>p]:text-white/80 [&>p]:tracking-wide [&>h1]:text-white [&>h2]:text-white [&>h3]:text-white [&>strong]:text-white [&_.blog-link]:text-[var(--color-tertiary)] [&_.blog-link]:underline [&_.blog-link]:underline-offset-4 [&_.blog-link]:hover:text-[var(--color-tertiary)]/80"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>

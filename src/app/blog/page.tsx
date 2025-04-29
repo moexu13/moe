@@ -27,17 +27,7 @@ const Blog = async () => {
         </div>
       </header>
 
-      <main className="container mx-auto pl-0 pr-8 -mt-8 max-w-6xl min-h-[calc(100vh-40vh)]">
-        {/* Breadcrumb Navigation */}
-        <div className="mb-8 lg:ml-[-2rem]">
-          <Breadcrumb
-            items={[
-              { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog", current: true },
-            ]}
-          />
-        </div>
-
+      <main className="container mx-auto pl-0 pr-8 -mt-8 max-w-6xl min-h-[calc(100vh-40vh)] pt-16">
         <div className="flex flex-col lg:flex-row gap-16">
           {/* Left Side Menu */}
           <div className="lg:w-1/5 lg:-ml-16">

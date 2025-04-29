@@ -4,6 +4,7 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
+import classNames from "remark-class-names";
 
 const postsDirectory = path.join(process.cwd(), "src/app/blog/posts");
 
@@ -34,8 +35,15 @@ export async function getSortedPostsData(): Promise<BlogPost[]> {
       const matterResult = matter(fileContents);
 
       // Use remark to convert markdown into HTML string
-      const processedContent = await remark().use(html).process(matterResult.content);
-      const contentHtml = processedContent.toString();
+      const processedContent = await remark()
+        .use(classNames, {
+          a: "text-[var(--color-tertiary)] hover:text-[var(--color-tertiary)]/80 underline underline-offset-4",
+        })
+        .use(html)
+        .process(matterResult.content);
+      const contentHtml = processedContent
+        .toString()
+        .replace(/<a href=/g, '<a class="blog-link" href=');
 
       // Combine the data with the id
       return {
@@ -64,8 +72,15 @@ export async function getPostData(slug: string): Promise<BlogPost> {
   const matterResult = matter(fileContents);
 
   // Use remark to convert markdown into HTML string
-  const processedContent = await remark().use(html).process(matterResult.content);
-  const contentHtml = processedContent.toString();
+  const processedContent = await remark()
+    .use(classNames, {
+      a: "text-[var(--color-tertiary)] hover:text-[var(--color-tertiary)]/80 underline underline-offset-4",
+    })
+    .use(html)
+    .process(matterResult.content);
+  const contentHtml = processedContent
+    .toString()
+    .replace(/<a href=/g, '<a class="blog-link" href=');
 
   // Combine the data with the slug
   return {
