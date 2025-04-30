@@ -8,14 +8,14 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { loversQuarrel, openSans } from "./fonts";
 
 export const metadata: Metadata = {
-  title: "Melissa's Portfolio",
-  description: "A showcase of my web development projects and skills",
+  title: "Melissa Albarella",
+  description: "Melissa Albarella's portfolio and blog",
   metadataBase: new URL("https://melissa-albarella.dev"),
   openGraph: {
-    title: "Melissa's Portfolio",
-    description: "A showcase of my web development projects and skills",
+    title: "Melissa Albarella",
+    description: "Melissa Albarella's portfolio and blog",
     url: "https://melissa-albarella.dev",
-    siteName: "Melissa's Portfolio",
+    siteName: "Melissa Albarella",
     images: [
       {
         url: "/preview.jpg", // You'll need to add this image to your public folder
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Melissa's Portfolio",
-    description: "A showcase of my web development projects and skills",
+    title: "Melissa Albarella",
+    description: "Melissa Albarella's portfolio and blog",
     images: ["/preview.jpg"],
   },
 };
