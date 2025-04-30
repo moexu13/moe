@@ -85,8 +85,8 @@ const Breadcrumb = ({ fixed = false }: BreadcrumbProps) => {
 
   if (fixed) {
     return (
-      <div className="fixed top-0 left-0 right-0 bg-[var(--color-primary)]/90 backdrop-blur-sm z-50">
-        <div className="container mx-auto px-4 py-4">{breadcrumbContent}</div>
+      <div className="fixed top-0 left-0 right-0 bg-[var(--color-primary)]/90 backdrop-blur-sm z-50 min-h-[64px]">
+        <div className="container mx-auto px-4 py-6">{breadcrumbContent}</div>
       </div>
     );
   }
