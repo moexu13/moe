@@ -16,7 +16,7 @@ const Header = () => {
             <li>
               <Link
                 href="#portfolio"
-                className="text-white hover:text-(--color-secondary) text-lg transition-colors"
+                className="text-white hover:text-(--color-tertiary) text-lg transition-colors"
               >
                 Portfolio
               </Link>
@@ -24,7 +24,7 @@ const Header = () => {
             <li>
               <Link
                 href="/blog"
-                className="text-white hover:text-(--color-secondary) text-lg transition-colors"
+                className="text-white hover:text-(--color-tertiary) text-lg transition-colors"
               >
                 Blog
               </Link>
@@ -32,7 +32,7 @@ const Header = () => {
             <li>
               <Link
                 href="#contact"
-                className="text-white hover:text-(--color-secondary) text-lg transition-colors"
+                className="text-white hover:text-(--color-tertiary) text-lg transition-colors"
               >
                 Contact
               </Link>
