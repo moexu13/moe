@@ -2,14 +2,17 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 import "./globals.css";
+import Breadcrumb from "@/components/Breadcrumb";
+
 import { loversQuarrel, openSans } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Melissa Albarella",
-  description: "Melissa Albarella's personal website",
+  description: "Melissa Albarella's portfolio and blog",
+  metadataBase: new URL("https://melissa-albarella.dev"),
   openGraph: {
     title: "Melissa Albarella",
-    description: "Melissa Albarella's personal website",
+    description: "Melissa Albarella's portfolio and blog",
     url: "https://melissa-albarella.dev",
     siteName: "Melissa Albarella",
     images: [
@@ -26,7 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Melissa Albarella",
-    description: "Melissa Albarella's personal website",
+    description: "Melissa Albarella's portfolio and blog",
     images: ["/preview.jpg"],
   },
 };
@@ -44,6 +47,7 @@ export default function RootLayout({
       <body
         className={`${loversQuarrel.className} ${openSans.className} m-0 p-0 h-full w-full overflow-x-hidden`}
       >
+        <Breadcrumb fixed />
         <div className="fixed top-0 left-0 right-0 bottom-0 -z-10 overflow-hidden">
           <Image
             src="/bg.jpeg"
